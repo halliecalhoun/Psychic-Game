@@ -26,8 +26,8 @@
     var losses = 0;
     var guessLeft = 9;
     var guessSoFar = "";
-    var resetGame = [];
-    var userLetter = [];
+    // var resetGame = [];
+    var userHistory = [];
 
     // Creating variable for computerchoices of alaphabet
     var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -46,7 +46,7 @@
     guessSoFar == 0;
     console.log(guessSoFar);
   };
-userHistory = [];
+
 // This function is run whenever the user presses a key.
 document.onkeyup = function(event) {
 
@@ -83,20 +83,6 @@ if (userGuess === computerGuess) {
   console.log(losses);
 }
 
-
-  if ((userGuess === "r" && computerGuess === "s") ||
-    (userGuess === "s" && computerGuess === "p") || 
-    (userGuess === "p" && computerGuess === "r")) {
-    wins++;
-    resetGame();
-
-  } else if (userGuess === computerGuess) {
-    ties++;
-    resetGame();
-  } else {
-    losses++;
-    resetGame();
-  }
 
   // Hide the directions
   directionsText.textContent = "";
