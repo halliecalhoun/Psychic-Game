@@ -8,13 +8,19 @@
     var guessedLetters = [];
     
     var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-    // var computerGuess = "";
+    var computerGuess = "";
     // var userLetter = "";
     // var userHistory = "";
     
+    function randomNumber() {
+        computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length -1)];
+        console.log(computerGuess);
+    }
+
     function resetGame() {
         guessLeft = 9;
         guessedLetters = [];
+        randomNumber();
       }
     // var resetGame = [];
     // var userHistory = [];
@@ -35,7 +41,7 @@ document.onkeyup = function(event) {
     var userGuess = event.key;
     console.log(userGuess);
 // letteroptions.include(userGuess) and includeuser= false
-    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length -1)];
+  
     // console.log(computerGuess);
     // Determines which key was pressed.
     
@@ -44,6 +50,7 @@ document.onkeyup = function(event) {
 
 if (userGuess === computerGuess) {
     wins++;
+    resetGame();
     // resetGame();
     // winsText.push(wins);
     // log(winsText);
