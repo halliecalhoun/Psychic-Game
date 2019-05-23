@@ -75,10 +75,12 @@ if (userGuess === computerGuess) {
   console.log(guessSoFar);
   
 
-} else (userGuess !== computerGuess) {
+} else (guessLeft === 0) {
   losses++;
   lossesText.push(losses);
-  lossesText.innerHTML(wins);
+  lossesText.innerHTML(losses);
+  resetGame();
+  console.log(losses);
 }
 
 
