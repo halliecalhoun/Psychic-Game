@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,111 +7,24 @@
     <title>Document</title>
 </head>
 <body>
-    <div>   
-        <h1 id="title-text">Guess what letter I'm thinking of</h1>
+  
+        <h1>Guess what letter I'm thinking of:</h1>
         <!-- (# of times the user has guessed the letter correctly) -->
-        <p id="wins-text">Wins:</p> 
-        <!-- (# of times the user has failed to guess the letter correctly after exhausting all guesses) -->
+        <h4>Wins: <span id="wins-text"></span></h4>
+        <h4>Losses: <span id="losses-text"></span></h4>
+       <h4>Guesses Left: <span id="guess-left-text"></span></h4>
+       <h4>Guesses So Far: <span id="guess-so-far-text"></span></h4>
+
+        <!-- (# of times the user has failed to guess the letter correctly after exhausting all guesses)
         <p id="losses-text">Losses:</p>
-        <!-- (# of guesses left. This will update) -->
-        <p id="guess-left-text">Guesses Left:</p>
+        (# of guesses left. This will update) -->
+        <!-- <p id="guess-left-text">Guesses Left:</p> -->
         <!-- (the specific letters that the user typed. Display these until the user either wins or loses.) -->
-        <p id="guess-so-far-text">Your Guesses So Far:</p> 
-    </div>
+        <!-- <p id="guess-so-far-text">Your Guesses So Far:</p> 
+        --> 
+      
 <!-- When the player wins, increase the Wins counter and start the game over again (without refreshing the page). -->
 
-<script>
-    // Creating variables to hold the number of wins, losses, guesses left, guesses so far
-    var wins = 0;
-    var losses = 0;
-    var guessLeft = 9;
-    var guessSoFar = "";
-    // var resetGame = [];
-    var userHistory = [];
-
-    // Creating variable for computerchoices of alaphabet
-    var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-    // var computerGuess = "";
-    // var userGuess = "";
-
-    // Create variables that hold references to the places in the HTML where we want to display things.
-    var winsText = document.getElementById("wins-text");
-    var lossesText = document.getElementById("losses-text");
-    var guessLeftText = document.getElementById("guess-left-text");
-    var guessSoFarText = document.getElementById("guess-so-far-text");
-    
-    function resetGame() {
-    guessLeft -= 1;
-    console.log(guessLeft);
-    guessSoFar == 0;
-    console.log(guessSoFar);
-  };
-
-// This function is run whenever the user presses a key.
-document.onkeyup = function(event) {
-
-// Determines which key was pressed.
-var userGuess = event.key;
-
-// Randomly chooses a choice from the options array. This is the Computer's guess.
-var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-
-// Reworked our code from last step to use "else if" instead of lots of if statements.
-
-// This logic determines the outcome of the game (win/loss/tie), and increments the appropriate number
- 
-if (userGuess === computerGuess) {
-  wins++;
-  winsText.push(wins);
-  document.getElementById("winsText").textContent = "Wins: " + wins;
-  resetGame();
-  console.log(wins);
-
-} else if (userGuess !== computerGuess) {
-  guessLeft -= 1;
-  // document.getElementById("guess-so-far-text").textContent = "Guess so far: " + guessSoFar; 
-  guessSoFarText.innerHTML(guessSoFar);
-  guessSoFar.push(userHistory);
-  console.log(guessSoFar);
-  
-
-} else (guessLeft === 0) {
-  losses++;
-  lossesText.push(losses);
-  lossesText.innerHTML(losses);
-  resetGame();
-  console.log(losses);
-}
-
-
-  // Hide the directions
-  directionsText.textContent = "";
-
-  // Display the user and computer guesses, and wins/losses/ties.
-  winsText.innerHTML(wins);
-  winsText.textContent = "Wins: " + wins;
-
-  userChoiceText.textContent = "You chose: " + userGuess;
-  computerChoiceText.textContent = "The computer chose: " + computerGuess;
-  winsText.textContent = "wins: " + wins;
-  lossesText.textContent = "losses: " + losses;
-  tiesText.textContent = "ties: " + ties;
-}
-};
-</script>
-
-<!-- When the player loses, increase the Losses counter and restart the game without a page refresh (just like when the user wins). -->
-
-
+<script src="assets/javascript/game.js"></script>
 </body>
 </html>
-
-var guessLetter = event.key
-push variable
-
-userLetter.push(guessLetter) 
-
-function resetGame();
-everything goes back to zero
-
-point = push to inner html
