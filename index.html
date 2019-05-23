@@ -69,8 +69,10 @@ if (userGuess === computerGuess) {
 
 } else if (userGuess !== computerGuess) {
   guessLeft -= 1;
-  document.getElementById("guess-so-far-text").textContent = "Guess so far: " + guessSoFar; 
+  // document.getElementById("guess-so-far-text").textContent = "Guess so far: " + guessSoFar; 
+  guessSoFarText.innerHTML(guessSoFar);
   guessSoFar.push(userHistory);
+  console.log(guessSoFar);
   
 
 } else (userGuess !== computerGuess) {
