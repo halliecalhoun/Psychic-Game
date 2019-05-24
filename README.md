@@ -1,6 +1,6 @@
 # Psychic-Game
 
-![Site Screenshot](Assets\images\readme1.PNG)
+![Site Screenshot](Assets\images\style-screenshot.PNG)
 
 Hallie Calhoun's Psychic Game testing users ability to guess the computers randomly generated number.
 

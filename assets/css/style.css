@@ -6,6 +6,7 @@
     min-height: 100%;
     background-position: center;
     background-size: cover;
+    margin: 0 auto;
   }
   
   /* .mainContent {
@@ -20,46 +21,61 @@
       align-self: center;
       margin-left: 250px;
   } */
-  /* Add some content at the bottom of the video/page */
+  
   .content {
     position: fixed;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    top: 115px;
+    background: rgba(0, 0, 0, 0.753);
     color: #f1f1f1;
     width: 100%;
-    padding: 20px;
+    margin: 0 auto;
+    margin-left: -20px;
+    padding: 25px;
+    /* padding-top: -50px; */
+
   }
   
-  /* Style the button used to pause/play the video */
-  /* #myBtn {
-    width: 200px;
-    font-size: 18px;
-    padding: 10px;
-    border: none;
-    background: #000;
-    color: #fff;
-    cursor: pointer;
+  #content-text {
+    color: #f1f1f1;
+    width: 100%;
+    margin: 0 auto;
+    margin-left: -20px;
+    padding-top: 10px;
+    /* margin-top: -25px; */
   }
-  
-  #myBtn:hover {
-    background: #ddd;
-    color: black;
-  } */
+
+  #content-score {
+    color: #f1f1f1;
+    width: 100%;
+    margin: 0 auto;
+    margin-left: -20px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    /* margin-bottom: 40px; */
+  }
 
   h1 {
-      font-family: 'Nosifer', cursive;
-      font-size: 45px;
+      font-family: 'Bungee Shade', cursive;
+      font-size: 50px;
       text-align: center;
-      font-weight: bold;
+      /* font-weight: bold; */
       color: white;
+      /* letter-spacing: 1px; */
+      text-transform: uppercase;
+      margin: 0 auto;
+      margin-top: -15px;
   }
 
   h2 {
     font-family: 'Revalia', cursive;
-    font-size: 30px;
+    font-size: 35px;
     text-align: center;
     font-weight: bold;
     color: white;
+    margin: 0 auto;
+    /* margin-top: -40px; */
+    margin-bottom: 25px;
+    margin-top: -15px;
 }
 
 h3 {
@@ -67,5 +83,12 @@ h3 {
     font-size: 28px;
     text-align: center;
     color: white;
-    line-height: 25px;
+    line-height: 45px;
+    margin: 0 auto;
+}
+
+hr {
+    width: 100%;
+
+
 }
