@@ -33,38 +33,26 @@ document.onkeyup = function(event) {
     var userGuess = event.key.toLowerCase();
     console.log(userGuess);
 
-  if (alphabet.includes(userGuess)){
+  if (computerChoices.includes(userGuess) && guessedLetters.includes(userGuess) === false){
+      guessedLetters.push(userGuess);
+      guessLeft--;
+//   (alphabet.includes(userGuess)){
 
     if (userGuess === computerGuess) {
         wins++;
         resetGame();
-    // resetGame();
-    // winsText.push(wins);
-    // log(winsText);
-    // log(resetGame());
-    // document.getElementById("wins-text").textContent = wins;
-    // wins.push(winsText);
-
-  } else {
-        guessLeft--;
-        guessedLetters.push(" " + userGuess);
-    // guessLeftText.push(guessLeft);
-    // log(guessLeftText);
-    // userGuess.push(userHistory);
-    // document.getElementById("guess-so-far-text").textContent = userHistory;
-    // guessSoFar.push(userHistory);
-    // log(guessSoFar);
-    // document.getElementById("guess-so-far-text").textContent = userGuess;
     }
 
-    if (guessLeft === 0) {
+//   } else {
+//         guessLeft--;
+//         guessedLetters.push(" " + userGuess);
+    
+    // }
+
+    else if (guessLeft === 0) {
         losses++;
         resetGame();
-    // log(losses);
-    // lossesText.push(losses);
-    // lossesText.innerHTML(losses);
-    // log(reset());
-    // console.log(losses);
+
     }
 }
 // sets new text value in HTML and displays on webpage 
