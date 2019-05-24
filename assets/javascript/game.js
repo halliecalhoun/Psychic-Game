@@ -1,56 +1,40 @@
-
-
-    // Creating variables to hold the number of wins, losses, guesses left, guesses so far
+     // variables holding the number of wins, losses, guesses left, guesses so far, etc.
     var wins = 0;
     var losses = 0;
     var guessLeft = 9;
-    // var guessSoFar = "";
     var guessedLetters = [];
-    
     var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     var computerGuess = "";
-    // var userLetter = "";
-    // var userHistory = "";
-    
+  
+    // function for creating a new random number
     function randomNumber() {
         computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length -1)];
         console.log(computerGuess);
     }
 
+    // function to reset the game
     function resetGame() {
         guessLeft = 9;
         guessedLetters = [];
         randomNumber();
-      }
-    // var resetGame = [];
-    // var userHistory = [];
+    }
 
-    // Create variables that hold references to the places in the HTML where we want to display things.
+    // Variables that hold references to ids in HTML where we want to display things.
     var winsText = document.getElementById("wins-text");
     var lossesText = document.getElementById("losses-text");
     var guessLeftText = document.getElementById("guess-left-text");
     var guessSoFarText = document.getElementById("guess-so-far-text");
+    // letteroptions.include(userGuess) and includeuser= false
 
-    // computer random number
-    // var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-    
-
+// created a key press event listener
 document.onkeyup = function(event) {
-
-    // Creating variable for computerchoices of alaphabet
+    // stores key the user press in a variable that I created
     var userGuess = event.key;
     console.log(userGuess);
-// letteroptions.include(userGuess) and includeuser= false
-  
-    // console.log(computerGuess);
-    // Determines which key was pressed.
-    
-    // userGuess.push(userLetter);
-    // var userGuess = event.key.toLowerCase();
 
-if (userGuess === computerGuess) {
-    wins++;
-    resetGame();
+    if (userGuess === computerGuess) {
+        wins++;
+        resetGame();
     // resetGame();
     // winsText.push(wins);
     // log(winsText);
@@ -59,8 +43,8 @@ if (userGuess === computerGuess) {
     // wins.push(winsText);
 
   } else {
-    guessLeft--;
-    guessedLetters.push(" " + userGuess);
+        guessLeft--;
+        guessedLetters.push(" " + userGuess);
     // guessLeftText.push(guessLeft);
     // log(guessLeftText);
     // userGuess.push(userHistory);
@@ -68,23 +52,23 @@ if (userGuess === computerGuess) {
     // guessSoFar.push(userHistory);
     // log(guessSoFar);
     // document.getElementById("guess-so-far-text").textContent = userGuess;
-  }
+    }
 
-  if (guessLeft === 0) {
-    losses++;
+    if (guessLeft === 0) {
+        losses++;
+        resetGame();
     // log(losses);
     // lossesText.push(losses);
     // lossesText.innerHTML(losses);
-    resetGame();
     // log(reset());
     // console.log(losses);
-   }
+    }
 
-  
-   winsText.textContent = wins;
-   guessLeftText.textContent = guessLeft;
-   lossesText.textContent = losses;
-   guessSoFarText.textContent = guessedLetters;
+// sets new text value in HTML and displays on webpage 
+winsText.textContent = wins;
+guessLeftText.textContent = guessLeft;
+lossesText.textContent = losses;
+guessSoFarText.textContent = guessedLetters;
    
 };
 
