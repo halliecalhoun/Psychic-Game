@@ -5,6 +5,8 @@
     var guessedLetters = [];
     var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     var computerGuess = "";
+    var alphabet = "abcdefghijklmnopqrstuvwxyz";
+
   
     // function for creating a new random number
     function randomNumber() {
@@ -24,13 +26,14 @@
     var lossesText = document.getElementById("losses-text");
     var guessLeftText = document.getElementById("guess-left-text");
     var guessSoFarText = document.getElementById("guess-so-far-text");
-    // letteroptions.include(userGuess) and includeuser= false
 
 // created a key press event listener
 document.onkeyup = function(event) {
     // stores key the user press in a variable that I created
-    var userGuess = event.key;
+    var userGuess = event.key.toLowerCase();
     console.log(userGuess);
+
+  if (alphabet.includes(userGuess)){
 
     if (userGuess === computerGuess) {
         wins++;
@@ -63,7 +66,7 @@ document.onkeyup = function(event) {
     // log(reset());
     // console.log(losses);
     }
-
+}
 // sets new text value in HTML and displays on webpage 
 winsText.textContent = wins;
 guessLeftText.textContent = guessLeft;
